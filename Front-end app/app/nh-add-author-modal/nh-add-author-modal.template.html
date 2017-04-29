@@ -1,0 +1,25 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$ctrl.dismiss()">&times;</button>
+    <h4 class="modal-title">{{ "AUTHOR.ADD" | translate}}</h4>
+</div>
+<div class="modal-body">
+    <form name="authorForm" role="form">
+        <div class="form-group">
+            <label for="name">{{ "AUTHOR.NAME" | translate }}:</label>
+            <input type="text" class="form-control" id="name" name="name" ng-model="$ctrl.author.name" ng-maxlength="50" required>
+        </div>
+        <div class="alert alert-danger" ng-show="authorForm.name.$touched && authorForm.name.$error.required">
+            {{ "AUTHOR.NAME_IS_REQUIRED_MESSAGE" | translate }}
+        </div>
+        <div class="alert alert-danger" ng-show="authorForm.name.$touched && authorForm.name.$error.maxlength">
+            {{ "AUTHOR.NAME_MAX_SIZE_EXCEEDED_MESSAGE" | translate }}
+        </div>
+    </form>
+    <div class="alert alert-danger" ng-show="$ctrl.errorMessage">
+        {{ $ctrl.errorMessage | translate }}
+    </div>
+</div>
+<div class="modal-footer">
+    <input type="submit" value="{{ 'SAVE' | translate }}" class="btn btn-primary" ng-disabled="authorForm.$invalid" ng-click="$ctrl.addAuthor()">
+    <button type="button" class="btn btn-default" ng-click="$ctrl.dismiss()">{{ "CANCEL" | translate }}</button>
+</div>

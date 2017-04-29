@@ -1,0 +1,121 @@
+html, body {
+    height: 100%;
+}
+* {
+    word-wrap: break-word;
+}
+.wrapper {
+    height: auto;
+    min-height: 100%;
+}
+main {
+    padding-bottom: 50px;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.authors span:after {
+    content: ', ';
+}
+.authors :last-child:after {
+    content: '';
+}
+.buttons-block {
+    float: right;
+}
+.btn-md {
+    margin-bottom: 10px;
+}
+.dropdown-menu li {
+    cursor: pointer;
+}
+.glyphicon-remove {
+    cursor: pointer;
+}
+.modal-body .dropdown {
+    margin-bottom: 10px;
+}
+.modal-body .well {
+    padding: 10px;
+}
+.navbar-right li {
+    margin: 0;
+    cursor: pointer;
+}
+.navbar-right li:hover {
+    color: #555;
+    background-color: #e7e7e7;
+}
+.navbar-right li button {
+    color: #777;
+    padding: 10px 15px;
+    line-height: 20px;
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
+.navbar-right li .active{
+    color: #555;
+    background-color: #e7e7e7;
+}
+.jumbotron ul.list-group{
+    list-style: none;
+    padding-left: 0;
+    clear: both;
+}
+.jumbotron p{
+    font-size: 16px;
+}
+.pagination {
+    margin: 10px 0;
+}
+.sidebar .jumbotron {
+    padding: 20px;
+}
+.sidebar .jumbotron .list-group li {
+    cursor: pointer;
+}
+.sidebar .jumbotron .list-group li:hover {
+    background-color: lavender;
+}
+.sidebar .jumbotron .sidebar-block {
+    margin-bottom: 10px;
+}
+.sidebar-block input, .sidebar-block .btn-block {
+    margin-bottom: 10px;
+}
+.tag {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 4px 8px;
+}
+.well{
+    padding: 8px;
+}
+@media screen and (min-width: 767px){
+    .well{
+        padding: 19px;
+    }
+}
+.well h3{
+    font-size: 18px;
+    margin-top: 0;
+}
+.modal form{
+    display: inline;
+}
+footer{
+    position: relative;
+    margin-top: -50px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    height: 50px;
+    border: 1px solid #e7e7e7;
+}
+footer p{
+    margin-top: 10px;
+}

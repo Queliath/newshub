@@ -1,0 +1,25 @@
+<div class="jumbotron">
+
+    <button type="button" class="btn btn-default btn-sm btn-block" ng-click="$ctrl.resetFilters()" ng-show="$ctrl.tagIds.length > 0 || $ctrl.authorIds.length > 0">{{ "RESET" | translate }}</button>
+
+    <div class="sidebar-block">
+        <h3>{{ "TAG.MANY" | translate }}</h3>
+        <input type="text" class="form-control" ng-model="$ctrl.tagSearchInput" uib-typeahead="tag.name for tag in $ctrl.getTagsByNameFragment($viewValue)" typeahead-wait-ms="500" typeahead-popup-template-url="null" autocomplete="off">
+        <button type="button" class="btn btn-default btn-sm btn-block" ng-show="$ctrl.displayingSearchTags" ng-click="$ctrl.resetTagsSearch()">{{ "TAG.RESET_SEARCH" | translate }}</button>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="tag in $ctrl.sidebarTags" ng-class="{ active: $ctrl.isActiveFilterTag(tag.id) }" ng-click="$ctrl.toggleFilterTag(tag.id)">{{ tag.name }}<span class="badge">{{ tag.newsCount }}</span></li>
+        </ul>
+        <button type="button" class="btn btn-primary btn-sm" ng-click="$ctrl.openAddTagModal()">{{ "TAG.ADD" | translate }}</button>
+    </div>
+
+    <div class="sidebar-block">
+        <h3>{{ "AUTHOR.MANY" | translate }}</h3>
+        <input type="text" class="form-control" ng-model="$ctrl.authorSearchInput" uib-typeahead="author.name for author in $ctrl.getAuthorsByNameFragment($viewValue)" typeahead-wait-ms="500" typeahead-popup-template-url="null" autocomplete="off">
+        <button type="button" class="btn btn-default btn-sm btn-block" ng-show="$ctrl.displayingSearchAuthors" ng-click="$ctrl.resetAuthorsSearch()">{{ "AUTHOR.RESET_SEARCH" | translate }}</button>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="author in $ctrl.sidebarAuthors" ng-class="{ active: $ctrl.isActiveFilterAuthor(author.id)}" ng-click="$ctrl.toggleFilterAuthor(author.id)">{{ author.name }}<span class="badge">{{ author.newsCount }}</span></li>
+        </ul>
+        <button type="button" class="btn btn-primary btn-sm" ng-click="$ctrl.openAddAuthorModal()">{{ "AUTHOR.ADD" | translate }}</button>
+    </div>
+
+</div>

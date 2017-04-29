@@ -1,0 +1,16 @@
+<h3>{{ "COMMENT.ADD" | translate }}</h3>
+<form name="commentForm" role="form">
+    <div class="form-group">
+        <label for="content">{{ "COMMENT.CONTENT" | translate }}:</label>
+        <textarea class="form-control" id="content" name="content" ng-model="$ctrl.comment.content" rows="5" required></textarea>
+    </div>
+    <div class="alert alert-danger" ng-show="commentForm.content.$touched && commentForm.content.$error.required">
+        {{ "COMMENT.CONTENT_IS_REQUIRED_MESSAGE" | translate }}
+    </div>
+    <div class="form-group">
+        <input type="submit" value="{{ 'SAVE' | translate }}" class="btn btn-primary" ng-disabled="commentForm.$invalid" ng-click="$ctrl.addComment(commentForm)">
+    </div>
+</form>
+<div class="alert alert-danger" ng-show="$ctrl.errorMessage">
+    {{ $ctrl.errorMessage | translate }}
+</div>

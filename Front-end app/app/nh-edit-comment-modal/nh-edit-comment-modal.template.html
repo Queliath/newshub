@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$ctrl.dismiss()">&times;</button>
+    <h4 class="modal-title">{{ "COMMENT.EDIT" | translate }}</h4>
+</div>
+<div class="modal-body">
+    <form name="commentForm" role="form">
+        <div class="form-group">
+            <label for="content">{{ "COMMENT.CONTENT" | translate }}:</label>
+            <textarea class="form-control" id="content" name="content" ng-model="$ctrl.comment.content" rows="5" required></textarea>
+        </div>
+        <div class="alert alert-danger" ng-show="commentForm.content.$touched && commentForm.content.$error.required">
+            {{ "COMMENT.CONTENT_IS_REQUIRED_MESSAGE" | translate }}
+        </div>
+    </form>
+    <div class="alert alert-danger" ng-show="$ctrl.errorMessage">
+        {{ $ctrl.errorMessage | translate }}
+    </div>
+</div>
+<div class="modal-footer">
+    <input type="submit" value="{{ 'SAVE' | translate }}" class="btn btn-primary" ng-disabled="commentForm.$invalid" ng-click="$ctrl.updateComment()">
+    <button type="button" class="btn btn-default" ng-click="$ctrl.dismiss()">{{ "CANCEL" | translate }}</button>
+</div>

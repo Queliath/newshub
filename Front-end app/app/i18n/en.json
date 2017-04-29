@@ -1,0 +1,62 @@
+{
+  "SAVE" : "Save",
+  "CANCEL" : "Cancel",
+  "YESTERDAY" : "Yesterday at",
+  "TODAY" : "Today at",
+  "RESET" : "Reset",
+  "BAD_REQUEST_ERROR_MESSAGE" : "There is some problem with the input data",
+  "INTERNAL_SERVER_ERROR_MESSAGE" : "There is some problem with the server",
+  "NOT_FOUND_ERROR_MESSAGE" : "There is no resource corresponding to your request",
+  "REQUEST_ERROR_DEFAULT_MESSAGE" : "There is some problem during the request",
+
+  "NEWS" : {
+    "ADD": "Add news",
+    "EDIT": "Edit news",
+    "DELETE": "Delete news",
+    "DELETE_MESSAGE": "Are you sure you want to delete this news?",
+    "TITLE": "Title",
+    "BRIEF_CONTENT": "Brief content",
+    "FULL_CONTENT": "Full content",
+    "CREATION_TIME": "Created",
+    "LAST_MODIFICATION_TIME": "Last modified",
+    "PER_PAGE": "news per page",
+    "TITLE_IS_REQUIRED_MESSAGE" : "The title is a required field",
+    "TITLE_MAX_SIZE_EXCEEDED_MESSAGE": "The title max size is 100 characters",
+    "BRIEF_CONTENT_IS_REQUIRED_MESSAGE" : "The brief content is a required field",
+    "FULL_CONTENT_IS_REQUIRED_MESSAGE" : "The full content is a required field",
+    "AUTHOR_IS_REQUIRED_MESSAGE" : "News should have at least one author",
+    "NO_RESULT" : "There is no news founded"
+  },
+
+  "COMMENT" : {
+    "MANY": "Comments",
+    "ADD": "Add new comment",
+    "EDIT": "Edit comment",
+    "DELETE": "Delete comment",
+    "DELETE_MESSAGE": "Are you sure you want to delete this comment?",
+    "SHOW": "Show comments",
+    "CONTENT": "Content",
+    "CREATION_TIME": "Created",
+    "CONTENT_IS_REQUIRED_MESSAGE" : "Content can't be empty"
+  },
+
+  "AUTHOR" : {
+    "MANY": "Authors",
+    "ADD": "Add author",
+    "RESET_SEARCH": "Reset authors search",
+    "NAME": "Name",
+    "NAME_IS_REQUIRED_MESSAGE" : "Name is a required field",
+    "NAME_MAX_SIZE_EXCEEDED_MESSAGE" : "The max size of a name is 50 characters",
+    "NAME_ALREADY_EXIST_MESSAGE": "This author's name already exists"
+  },
+
+  "TAG" : {
+    "MANY": "Tags",
+    "ADD": "Add tag",
+    "RESET_SEARCH": "Reset tags search",
+    "NAME": "Name",
+    "NAME_IS_REQUIRED_MESSAGE" : "Name is a required field",
+    "NAME_MAX_SIZE_EXCEEDED_MESSAGE" : "The max size of a name is 30 characters",
+    "NAME_ALREADY_EXIST_MESSAGE": "This tag's name already exists"
+  }
+}

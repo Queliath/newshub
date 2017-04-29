@@ -1,0 +1,12 @@
+<div uib-dropdown>
+    <button id="items-per-page-button" type="button" class="btn btn-primary" uib-dropdown-toggle>
+        {{ $ctrl.itemsPerPage }} {{ "NEWS.PER_PAGE" | translate }} <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="items-per-page-button">
+        <li role="menuitem" ng-class="{ active: $ctrl.itemsPerPage == 10 }" ng-click="$ctrl.setItemsPerPage(10)"><a>10 {{ "NEWS.PER_PAGE" | translate }}</a></li>
+        <li role="menuitem" ng-class="{ active: $ctrl.itemsPerPage == 20 }" ng-click="$ctrl.setItemsPerPage(20)"><a>20 {{ "NEWS.PER_PAGE" | translate }}</a></li>
+        <li role="menuitem" ng-class="{ active: $ctrl.itemsPerPage == 30 }" ng-click="$ctrl.setItemsPerPage(30)"><a>30 {{ "NEWS.PER_PAGE" | translate }}</a></li>
+        <li role="menuitem" ng-class="{ active: $ctrl.itemsPerPage == 50 }" ng-click="$ctrl.setItemsPerPage(50)"><a>50 {{ "NEWS.PER_PAGE" | translate }}</a></li>
+    </ul>
+</div>
+<ul uib-pagination total-items="$ctrl.totalItems" items-per-page="$ctrl.itemsPerPage" ng-model="$ctrl.currentPage" ng-change="$ctrl.pageChanged()" force-ellipses="true" max-size="7" boundary-link-numbers="true" next-text=">" previous-text="<"></ul>

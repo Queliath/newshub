@@ -1,0 +1,56 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$ctrl.dismiss()">&times;</button>
+    <h4 class="modal-title">{{ $ctrl.modalName | translate }}</h4>
+</div>
+<div class="modal-body">
+    <form name="newsForm" role="form">
+        <div class="form-group">
+            <label for="title">{{ "NEWS.TITLE" | translate }}:</label>
+            <input type="text" class="form-control" id="title" name="title" ng-model="$ctrl.news.title" ng-maxlength="100" required>
+        </div>
+        <div class="alert alert-danger" ng-show="newsForm.title.$touched && newsForm.title.$error.required">
+            {{ "NEWS.TITLE_IS_REQUIRED_MESSAGE" | translate }}
+        </div>
+        <div class="alert alert-danger" ng-show="newsForm.title.$touched && newsForm.title.$error.maxlength">
+            {{ "NEWS.TITLE_MAX_SIZE_EXCEEDED_MESSAGE" | translate }}
+        </div>
+        <div class="form-group">
+            <label for="briefContent">{{ "NEWS.BRIEF_CONTENT" | translate }}:</label>
+            <textarea class="form-control" id="briefContent" name="briefContent" rows="5" ng-model="$ctrl.news.briefContent" required></textarea>
+        </div>
+        <div class="alert alert-danger" ng-show="newsForm.briefContent.$touched && newsForm.briefContent.$invalid">
+            {{ "NEWS.BRIEF_CONTENT_IS_REQUIRED_MESSAGE" | translate }}
+        </div>
+        <div class="form-group">
+            <label for="fullContent">{{ "NEWS.FULL_CONTENT" | translate }}:</label>
+            <textarea class="form-control" id="fullContent" name="fullContent" rows="10" ng-model="$ctrl.news.fullContent" required></textarea>
+        </div>
+        <div class="alert alert-danger" ng-show="newsForm.fullContent.$touched && newsForm.fullContent.$invalid">
+            {{ "NEWS.FULL_CONTENT_IS_REQUIRED_MESSAGE" | translate }}
+        </div>
+        <div class="form-group">
+            <label for="authors">{{ "AUTHOR.ADD" | translate }}</label>
+            <input type="text" class="form-control" id="authors" name="authors" ng-model="$ctrl.authorsInput" uib-typeahead="author.name for author in $ctrl.getAuthorsByNameFragment($viewValue)" typeahead-on-select="$ctrl.selectAuthor($item, $model, $label, $event)" typeahead-wait-ms="500" autocomplete="off">
+        </div>
+        <div class="well">
+            <p>{{ "AUTHOR.MANY" | translate }}: <span class="tag" ng-repeat="author in $ctrl.news.authors">{{ author.name }} <span class="glyphicon glyphicon-remove" ng-click="$ctrl.removeAuthor(author)"></span></span></p>
+            <div class="alert alert-danger" ng-show="newsForm.authors.$touched && $ctrl.news.authors.length == 0">
+                {{ "NEWS.AUTHOR_IS_REQUIRED_MESSAGE" | translate }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="tags">{{ "TAG.ADD" | translate }}</label>
+            <input type="text" class="form-control" id="tags" ng-model="$ctrl.tagsInput" uib-typeahead="tag.name for tag in $ctrl.getTagsByNameFragment($viewValue)" typeahead-on-select="$ctrl.selectTag($item, $model, $label, $event)" typeahead-wait-ms="500" autocomplete="off">
+        </div>
+        <div class="well">
+            <p>{{ "TAG.MANY" | translate }}: <span class="tag" ng-repeat="tag in $ctrl.news.tags">{{ tag.name }} <span class="glyphicon glyphicon-remove" ng-click="$ctrl.removeTag(tag)"></span></span></p>
+        </div>
+    </form>
+    <div class="alert alert-danger" ng-show="$ctrl.errorMessage">
+        {{ $ctrl.errorMessage | translate }}
+    </div>
+</div>
+<div class="modal-footer">
+    <input type="submit" value="{{ 'SAVE' | translate }}" class="btn btn-primary" ng-disabled="newsForm.$invalid || $ctrl.news.authors.length == 0" ng-click="$ctrl.save()">
+    <button type="button" class="btn btn-default" ng-click="$ctrl.dismiss()">{{ "CANCEL" | translate }}</button>
+</div>

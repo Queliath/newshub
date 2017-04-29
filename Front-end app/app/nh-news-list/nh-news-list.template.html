@@ -1,0 +1,40 @@
+<div class="col-lg-3 col-md-4 sidebar">
+    <nh-news-list-sidebar tag-ids="$ctrl.filterTagIds" author-ids="$ctrl.filterAuthorIds" on-update="$ctrl.sidebarUpdated(tagIds, authorIds)" inner-ctrl="$ctrl.sidebarCtrl"></nh-news-list-sidebar>
+</div>
+
+<div class="col-lg-9 col-md-8">
+
+    <div class="clearfix">
+        <div class="buttons-block">
+            <button class="btn btn-primary btn-md" ng-click="$ctrl.openAddNewsModal()">{{ "NEWS.ADD" | translate }}</button>
+        </div>
+    </div>
+
+    <div class="alert alert-danger" ng-show="$ctrl.errorMessage">
+        {{ $ctrl.errorMessage | translate }}
+    </div>
+    <div class="alert alert-info" ng-show="$ctrl.newsList.length == 0">
+        {{ "NEWS.NO_RESULT" | translate }}
+    </div>
+
+    <div ng-if="$ctrl.totalItems > $ctrl.itemsPerPage">
+        <nh-news-list-pagination current-page="$ctrl.currentPage" items-per-page="$ctrl.itemsPerPage" total-items="$ctrl.totalItems" on-page-changed="$ctrl.pageChanged(currentPage)" on-items-per-page-changed="$ctrl.itemsPerPageChanged(itemsPerPage)"></nh-news-list-pagination>
+    </div>
+
+    <div class="well clearfix" ng-repeat="news in $ctrl.newsList">
+        <h3><a ui-sref="news({ newsId : news.id, prevState : $ctrl.getStateInfo() })">{{ news.title }}</a></h3>
+        <p>{{ "NEWS.CREATION_TIME" | translate }}: {{ news.creationTime | nhDatetimeShortFilter }} <span class="glyphicon glyphicon-pencil" ng-show="news.lastModificationTime"></span></p>
+        <p>{{ "AUTHOR.MANY" | translate }}: <span class="tag" ng-repeat="author in news.authors">{{ author.name }}</span></p>
+        <p>{{ news.briefContent }}</p>
+        <p>{{ "COMMENT.MANY" | translate }}: {{ news.commentCount }}</p>
+        <div class="buttons-block">
+            <a class="btn btn-sm btn-primary" ng-click="$ctrl.openEditNewsModal(news.id)">{{ "NEWS.EDIT" | translate }}</a>
+            <a class="btn btn-sm btn-default" ng-click="$ctrl.openDeleteNewsModal(news.id)">{{ "NEWS.DELETE" | translate }}</a>
+        </div>
+    </div>
+
+    <div ng-if="$ctrl.totalItems > $ctrl.itemsPerPage">
+        <nh-news-list-pagination current-page="$ctrl.currentPage" items-per-page="$ctrl.itemsPerPage" total-items="$ctrl.totalItems" on-page-changed="$ctrl.pageChanged(currentPage)" on-items-per-page-changed="$ctrl.itemsPerPageChanged(itemsPerPage)"></nh-news-list-pagination>
+    </div>
+
+</div>

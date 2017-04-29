@@ -1,0 +1,25 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$ctrl.dismiss()">&times;</button>
+    <h4 class="modal-title">{{ "TAG.ADD" | translate }}</h4>
+</div>
+<div class="modal-body">
+    <form name="tagForm" role="form">
+        <div class="form-group">
+            <label for="name">{{ "TAG.NAME" | translate }}:</label>
+            <input type="text" class="form-control" id="name" name="name" ng-model="$ctrl.tag.name" ng-maxlength="30" required>
+        </div>
+        <div class="alert alert-danger" ng-show="tagForm.name.$touched && tagForm.name.$error.required">
+            {{ "TAG.NAME_IS_REQUIRED_MESSAGE" | translate }}
+        </div>
+        <div class="alert alert-danger" ng-show="tagForm.name.$touched && tagForm.name.$error.maxlength">
+            {{ "TAG.NAME_MAX_SIZE_EXCEEDED_MESSAGE" | translate }}
+        </div>
+    </form>
+    <div class="alert alert-danger" ng-show="$ctrl.errorMessage">
+        {{ $ctrl.errorMessage | translate }}
+    </div>
+</div>
+<div class="modal-footer">
+    <input type="submit" value="{{ 'SAVE' | translate }}" class="btn btn-primary" ng-disabled="tagForm.$invalid" ng-click="$ctrl.addTag()">
+    <button type="button" class="btn btn-default" ng-click="$ctrl.dismiss()">{{ "CANCEL" | translate }}</button>
+</div>

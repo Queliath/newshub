@@ -1,0 +1,13 @@
+<nh-add-comment-panel news-id="$ctrl.newsId" on-update="$ctrl.commentAdded()"></nh-add-comment-panel>
+
+<h3 ng-show="$ctrl.commentCount > 0">{{ "COMMENT.MANY" | translate }}</h3>
+<ul uib-pagination total-items="$ctrl.commentCount" ng-model="$ctrl.currentPage" ng-change="$ctrl.pageChanged()" force-ellipses="true" max-size="7" boundary-link-numbers="true" next-text=">" previous-text="<" ng-if="$ctrl.commentCount > 10"></ul>
+<div class="well clearfix" ng-repeat="comment in $ctrl.comments">
+    <p>{{ "COMMENT.CREATION_TIME" | translate }}: {{ comment.creationTime | nhDatetimeFullFilter }}</p>
+    <p>{{ comment.content }}</p>
+    <div class="buttons-block">
+        <a class="btn btn-sm btn-primary" ng-click="$ctrl.openEditCommentModal(comment.id)">{{ "COMMENT.EDIT" | translate }}</a>
+        <a class="btn btn-sm btn-default" ng-click="$ctrl.openDeleteCommentModal(comment.id)">{{ "COMMENT.DELETE" | translate}}</a>
+    </div>
+</div>
+<ul uib-pagination total-items="$ctrl.commentCount" ng-model="$ctrl.currentPage" ng-change="$ctrl.pageChanged()" force-ellipses="true" max-size="7" boundary-link-numbers="true" next-text=">" previous-text="<" ng-if="$ctrl.commentCount > 10"></ul>

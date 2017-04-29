@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="$ctrl.dismiss()">&times;</button>
+    <h4 class="modal-title">{{ "NEWS.DELETE" | translate }}</h4>
+</div>
+<div class="modal-body">
+    <p>{{ "NEWS.DELETE_MESSAGE" | translate }}</p>
+    <div class="alert alert-danger" ng-show="$ctrl.errorMessage">
+        {{ $ctrl.errorMessage | translate }}
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="$ctrl.deleteNews()">{{ "NEWS.DELETE" | translate }}</button>
+    <button type="button" class="btn btn-default" ng-click="$ctrl.dismiss()">{{ "CANCEL" | translate }}</button>
+</div>

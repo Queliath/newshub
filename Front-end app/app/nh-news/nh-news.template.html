@@ -1,0 +1,23 @@
+<nh-back-button state-info="$ctrl.prevState"></nh-back-button>
+
+<div class="jumbotron">
+    <div class="alert alert-danger" ng-show="$ctrl.errorMessage">
+        {{ $ctrl.errorMessage | translate }}
+    </div>
+    <div ng-show="$ctrl.news">
+        <h3>{{ $ctrl.news.title }}</h3>
+        <p>{{ "NEWS.CREATION_TIME" | translate }}: {{ $ctrl.news.creationTime | nhDatetimeFullFilter }}</p>
+        <p ng-show="$ctrl.news.lastModificationTime">{{ "NEWS.LAST_MODIFICATION_TIME" | translate }}: {{ $ctrl.news.lastModificationTime | nhDatetimeFullFilter }}</p>
+        <p>{{ "AUTHOR.MANY" | translate }}: <span class="tag" ng-repeat="author in $ctrl.news.authors">{{ author.name }}</span></p>
+        <p>{{ "TAG.MANY" | translate }}: <span class="tag" ng-repeat="tag in $ctrl.news.tags">{{ tag.name }}</span></p>
+        <p>{{ $ctrl.news.fullContent }}</p>
+        <div class="buttons-block">
+            <a class="btn btn-primary btn-md" ng-click="$ctrl.openEditNewsModal($ctrl.news.id)">{{ "NEWS.EDIT" | translate }}</a>
+            <a class="btn btn-default btn-md" ng-click="$ctrl.openDeleteNewsModal($ctrl.news.id)">{{ "NEWS.DELETE" | translate }}</a>
+        </div>
+    </div>
+</div>
+
+<button type="button" class="btn btn-default btn-block" ng-show="!$ctrl.showingComments" ng-click="$ctrl.showComments()">{{ "COMMENT.SHOW" | translate }} ({{ $ctrl.news.commentCount }})</button>
+
+<ui-view></ui-view>

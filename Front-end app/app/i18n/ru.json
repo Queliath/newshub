@@ -1,0 +1,62 @@
+{
+  "SAVE" : "Сохранить",
+  "CANCEL" : "Отмена",
+  "YESTERDAY" : "Вчера в",
+  "TODAY" : "Сегодня в",
+  "RESET" : "Очистить",
+  "BAD_REQUEST_ERROR_MESSAGE" : "Ошибка запроса из-за введенных данных",
+  "INTERNAL_SERVER_ERROR_MESSAGE" : "Ошибка на стороне сервера",
+  "NOT_FOUND_ERROR_MESSAGE" : "Ресурс по заданному запросу не существует",
+  "REQUEST_ERROR_DEFAULT_MESSAGE" : "Ошибка в процессе выполнения запроса",
+
+  "NEWS" : {
+    "ADD": "Добавить новость",
+    "EDIT": "Редактировать",
+    "DELETE": "Удалить",
+    "DELETE_MESSAGE": "Вы уверены что хотите удалить эту новость?",
+    "TITLE": "Заголовок",
+    "BRIEF_CONTENT": "Краткое содержание",
+    "FULL_CONTENT": "Полное содержание",
+    "CREATION_TIME": "Добавлено",
+    "LAST_MODIFICATION_TIME": "Изменено",
+    "PER_PAGE": "новостей на страницу",
+    "TITLE_IS_REQUIRED_MESSAGE" : "Поле с заголовком должно быть заполнено",
+    "TITLE_MAX_SIZE_EXCEEDED_MESSAGE": "Максимальный размер заголовка 100 символов",
+    "BRIEF_CONTENT_IS_REQUIRED_MESSAGE" : "Поле с кратким содержанием должно быть заполнено",
+    "FULL_CONTENT_IS_REQUIRED_MESSAGE" : "Поле с полным содержанием должно быть заполнено",
+    "AUTHOR_IS_REQUIRED_MESSAGE" : "Новость должна иметь как минимум одного автора",
+    "NO_RESULT" : "Новостей не найдено"
+  },
+
+  "COMMENT" : {
+    "MANY": "Комментарии",
+    "ADD": "Оставить комментарий",
+    "EDIT": "Редактировать",
+    "DELETE": "Удалить",
+    "DELETE_MESSAGE": "Вы уверены что хотите удалить этот комментарий?",
+    "SHOW": "Показать комментарии",
+    "CONTENT": "Содержимое",
+    "CREATION_TIME": "Добавлен",
+    "CONTENT_IS_REQUIRED_MESSAGE" : "Содержимое комментария не может быть пустым"
+  },
+
+  "AUTHOR" : {
+    "MANY": "Авторы",
+    "ADD": "Добавить автора",
+    "RESET_SEARCH": "Сброс поиска авторов",
+    "NAME": "Имя",
+    "NAME_IS_REQUIRED_MESSAGE" : "Имя должно быть заполнено",
+    "NAME_MAX_SIZE_EXCEEDED_MESSAGE" : "Имя автора не может быть больше 50 символов",
+    "NAME_ALREADY_EXIST_MESSAGE": "Автор с введенным именем уже существует"
+  },
+
+  "TAG" : {
+    "MANY": "Теги",
+    "ADD": "Добавить тег",
+    "RESET_SEARCH": "Сброс поиска тегов",
+    "NAME": "Название",
+    "NAME_IS_REQUIRED_MESSAGE" : "Название должно быть заполнено",
+    "NAME_MAX_SIZE_EXCEEDED_MESSAGE" : "Название тега не может быть больше 30 символов",
+    "NAME_ALREADY_EXIST_MESSAGE": "Тег с введенным названием уже существует"
+  }
+}
